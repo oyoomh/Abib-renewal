@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abib 리뉴얼 페이지</title>
+  <!-- lodash 불러오기 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+
+<!-- 테일윈드 불러오기 -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- 폰트어썸 불러오기 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<!-- 제이쿼리 불러오기 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+<!-- 스와이퍼 불러오기 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+<!-- 페이지네이션 불러오기 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.2/js/swiper.js"></script>
+
+<!-- 스크롤 트리거 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<!-- 공통 css 연결 -->
+  <link rel="stylesheet" href="css/style.css">
+<!-- 공통 js 연결 -->
+  <script defer src="js/script.js"></script>
+</head>
+<body>
+  <!-- 탑바 구현 시작 -->
+<header class="pc-top-bar w-screen fixed inset-x-0">
+  <div class="header-container pc-con mx-auto h-full flex">
+    <div class="header-container__logo">
+      <a href="#" class="flex h-full items-center justify-center">
+        <img src="images/아비브 로고.png" alt="아비브 로고">
+      </a>
+    </div>
+    <div class="header-container__menu-box flex flex-1 items-center justify-center">
+      <nav class="menu-box__wrap">
+        <ul class="whitespace-nowrap">
+          <li><a href="#" data-hover="About"><span>About</span></a></li>
+          <li><a href="#" data-hover="Brand"><span>Brand</span></a></li>
+          <li><a href="#" data-hover="Membership"><span>Membership</span></a></li>
+          <li>
+            <a href="#" data-hover="Product"><span>Product</span></a>
+            <div>
+              <div class="menu-item__wrap mx-auto">
+                <nav class="w-full">
+                  <ul class="flex">
+                    <li class="flex-1">
+                      <a href="#" class=""><span>category</span></a>
+                      <div class="flex menu-item__wrap-inner">
+                        <ul class="flex-1">
+                          <li><a href="#"><span>스킨케어</span></a></li>
+                          <li><a href="#"><span>에센스</span></a></li>
+                          <li><a href="#"><span>크림</span></a></li>
+                          <li><a href="#"><span>패드</span></a></li>
+                          <li><a href="#"><span>마스크팩</span></a></li>
+                        </ul>
+                        <ul class="flex-1">
+                          <li><a href="#"><span>클렌저</span></a></li>
+                          <li><a href="#"><span>선케어</span></a></li>
+                          <li><a href="#"><span>바디케어</span></a></li>
+                          <li><a href="#"><span>파운데이션</span></a></li>
+                          <li><a href="#"><span>립</span></a></li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="flex-1">
+                      <a href="#"><span>solution</span></a>
+                      <div class="flex menu-item__wrap-inner">
+                        <ul>
+                          <li><a href="#"><span>진정</span></a></li>
+                          <li><a href="#"><span>수분</span></a></li>
+                          <li><a href="#"><span>미백</span></a></li>
+                          <li><a href="#"><span>탄력/보습</span></a></li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="flex-1">
+                      <a href="#"><span>line</span></a>
+                      <div class="flex menu-item__wrap-inner">
+                        <ul>
+                          <li><a href="#"><span>어성초</span></a></li>
+                          <li><a href="#"><span>수분초</span></a></li>
+                          <li><a href="#"><span>부활초</span></a></li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="flex-grow h-full"></div>
+    <div class="header-container__widget-box flex-1 flex items-center justify-end">
+      <nav class="menu-box__wrap">
+        <ul class="flex whitespace-nowrap items-center">
+          <li><a href="#"><span>Login</span></a></li>
+          <li><a href="#"><span>Join</span></a></li>
+          <li><a href="#"><span>Cart</span></a></li>
+          <li><a href="#"><img src="https://www.illiyoon.com/static/version1697695565/frontend/Smartwave/porto_child/ko_KR/images/icon/button_header_search_mo.png" alt="검색 아이콘"></a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+<header class="mobile-top-bar fixed inset-x-0">
+  <div class="header-container mobile-con h-full flex">
+    <div class="header-container__logo">
+      <a href="#" class="flex h-full items-center justify-center">
+        <img src="images/아비브 로고.png" alt="아비브 로고">
+      </a>
+    </div class="header-container__widget-box">
+    <div class="header-container__widget-box flex-1 flex items-center justify-end">
+      <nav class="menu-box__wrap">
+        <ul class="flex whitespace-nowrap items-center">
+          <!-- 					<li><a href="#"><span>Login</span></a></li>
+					<li><a href="#"><span>Join</span></a></li>
+					<li><a href="#"><span>Cart</span></a></li> -->
+          <li><a href="#"><span class="mobile-top-bar__btn-show-side-bar"></span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+<!-- 탑바 구현 끝 -->
+<div class="h-[50px]"></div>
+<!-- 모바일 사이드바 구현 시작 -->
+<div class="mobile-side-bar fixed inset-0 invisible opacity-0">
+  <div class="mobile-side-bar__content bg-white h-full ml-auto">
+    <div class="mobile-side-bar__head p-5">
+      <div class="mobile-side-bar__btn-close pt-6 relative cursor-pointer ml-auto">
+        <div class="absolute bg-black inset-x-0"></div>
+        <div class="absolute bg-black inset-x-0"></div>
+      </div>
+    </div>
+    <div class="mobile-side-bar__body flex-grow overflow-y-auto">
+      <div class="mobile-side-bar__search-box h-[35px]">
+        <input type="text" class="uppercase" placeholder="Search">
+        <a href="#"><img src="https://www.illiyoon.com/static/version1697695565/frontend/Smartwave/porto_child/ko_KR/images/icon/button_header_search_mo.png" alt="검색 아이콘"></a></li>
+      </div>
+      <nav class="mobile-menu-box-1">
+        <ul>
+          <li>
+            <a href="#"><span>category</span></a>
+            <ul>
+              <li><a href="#"><span>스킨케어</span></a></li>
+              <li><a href="#"><span>에센스</span></a></li>
+              <li><a href="#"><span>크림</span></a></li>
+              <li><a href="#"><span>패드</span></a></li>
+              <li><a href="#"><span>마스크팩</span></a></li>
+              <li><a href="#"><span>클렌저</span></a></li>
+              <li><a href="#"><span>선케어</span></a></li>
+              <li><a href="#"><span>바디케어</span></a></li>
+              <li><a href="#"><span>파운데이션</span></a></li>
+              <li><a href="#"><span>립</span></a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#"><span>solution</span></a>
+            <ul>
+              <li><a href="#"><span>진정</span></a></li>
+              <li><a href="#"><span>수분</span></a></li>
+              <li><a href="#"><span>미백</span></a></li>
+              <li><a href="#"><span>탄력/보습</span></a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#"><span>line</span></a>
+            <ul>
+              <li><a href="#"><span>어성초</span></a></li>
+              <li><a href="#"><span>수분초</span></a></li>
+              <li><a href="#"><span>부활초</span></a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <div class="mobile-side-bar__widget-box">
+        <a href="#"><span>Login</span></a>
+        <a href="#"><span>Join</span></a>
+        <a href="#"><span>Cart</span></a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 모바일 사이드바 구현 끝 -->
+<!-- 홈 메인 구현 시작 -->
+<section class="homeHeader pc-homeHeader fullscreen">
+  <div class="svg-container noselect">
+    <div class="svg-container__videoHolder revealElement revealOpacity revealed">
+      <!-- <video autoplay="" muted="" playsinline="" loop="">
+        <source src="video/아비브 홈 메인 비디오.mp4" type="video/mp4">
+      </video> -->
+
+      <video src="video/아비브 홈 메인 비디오.mp4" autoplay="true" muted="true" loop="true"></video>
+      <div class="oval">
+        <svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 0V1080H1920V0H0ZM960 943.61C558.76 943.61 233.5 796.09 233.5 614.11C233.5 432.13 558.78 284.61 960 284.61C1361.22 284.61 1686.5 432.13 1686.5 614.11C1686.5 796.09 1361.26 943.61 960 943.61Z" fill="#f9f8ee"></path>
+        </svg>
+      </div>
+    </div>
+    <div class="svg-container__svgs">
+      <img class="revealElement revealOpacity revealed" src="https://www.museothyssen.org/webdocs/conectathyssen/volver-naturaleza/wp-content/uploads/2022/01/home-txt-superior-en-1920x1080-1.svg">
+      <img class="revealElement revealOpacity revealed" src="https://www.museothyssen.org/webdocs/conectathyssen/volver-naturaleza/wp-content/uploads/2022/02/home-mascara-en-1920x1080-1.svg">
+    </div>
+
+  </div>
+</section>
+
+<section class="homeHeader mobile-homeHeader fullscreen">
+  <div class="svg-container noselect">
+    <div class="svg-container__videoHolder mobile-videoHolder revealElement revealOpacity revealed">
+      <video autoplay="" muted="" playsinline="" loop="">
+        <source src="video/아비브 홈 메인 비디오.mp4" type="video/mp4">
+      </video>
+      <div class="oval">
+        <svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 0V1080H1920V0H0ZM960 943.61C558.76 943.61 233.5 796.09 233.5 614.11C233.5 432.13 558.78 284.61 960 284.61C1361.22 284.61 1686.5 432.13 1686.5 614.11C1686.5 796.09 1361.26 943.61 960 943.61Z" fill="#f9f8ee"></path>
+        </svg>
+      </div>
+    </div>
+    <div class="svg-container__svgs">
+      <img class="revealElement revealOpacity revealed" src="https://www.museothyssen.org/webdocs/conectathyssen/volver-naturaleza/wp-content/uploads/2022/01/home-txt-superior-en-1920x1080-1.svg">
+
+    </div>
+    <div class="mobile-txt">
+      <span class="uppercase">
+        AN INVITATION TO LIVE THE PRESENT <br>
+        AND ENVISION THE FUTURE IN <br>
+        ALLIANCE WITH THE PLANET
+      </span>
+    </div>
+  </div>
+</section>
+<!-- 홈 메인 구현 끝 -->
+<!-- marquee 구현 시작 -->
+<div class="marquee items-center">
+  <div class="track">
+    <span class="text -r">.our abib.<span class="-green"> abib.</span></span><span class="text -r">.our abib.<span class="-green">abib.</span></span><span class="text -r">.our abib.<span class="-green">abib.</span></span><span class="text -r">.our abib.<span class="-green">abib.</span></span>
+  </div>
+</div>
+<!-- marquee 구현 끝 -->
+<!-- 베스트 상품 구현 시작 -->
+<!-- 베스트 상품 구현 시작 -->
+<section class="products pc-products">
+  <div class="products__wrap pc-con mx-auto">
+    <h2 class="tit uppercase">Best Seller</h2>
+    <ul class="products__tab-menu flex">
+      <li class="txt txt-1">Serum</li>
+      <li class="txt txt-2">Pad</li>
+      <li class="txt txt-3">Crème</li>
+    </ul>
+    <div class="pc-products__sub-wrap">
+      <div class="products__tab-content content-1">
+        <ul>
+          <li>
+            <a href="#">
+              <video autoplay="" muted="" playsinline="" loop="">
+                <source src="video/아비브 세럼 비디오.mp4" type="video/mp4">
+              </video>
+            </a>
+          
+          </li>
+          <li>
+            <a href="#">
+              <img src="images/아비브 세럼 재형.jpg" alt="부활초 세럼 제형">
+            </a>
+           
+          </li>
+          <li>
+            <a href="#">
+              <img src="images/아비브 세럼 원초.jpg" alt="부활초 세럼 원물">
+            </a>
+          
+          </li>
+        </ul>
+      </div>
+      <div class="products__tab-content content-2">
+        <ul>
+          <li>
+            <a href="#">
+              <video autoplay="" muted="" playsinline="" loop="">
+                <source src="video/아비브 패드 비디오.mp4" type="video/mp4">
+              </video>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="images/아비브 패드 재형.jpg" alt="부활초 패드 제형">
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="images/아비브 패드 원초.jpg" alt="부활초 패드 원물">
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="products__tab-content content-3">
+        <ul>
+          <li>
+            <a href="#">
+              <video autoplay="" muted="" playsinline="" loop="">
+                <source src="video/아비브 크림 비디오.mp4" type="video/mp4">
+              </video>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="images/아비브 크림 재형.jpg" alt="부활초 크림 제형">
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="images/아비브 크림 원초.jpg" alt="부활초 크림 원물">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="products mobile-products">
+  <div class="products__wrap mobile-products__wrap mobile-con mx-auto">
+    <h2 class="tit uppercase">Best Seller</h2>
+    <ul class="products__tab-menu mobile-products__tab-menu flex">
+      <li class="txt txt-1">Serum</li>
+      <li class="txt txt-2">Pad</li>
+      <li class="txt txt-3">Crème</li>
+    </ul>
+    <div class="mobile-products__sub-wrap">
+      <div class="products__tab-content mobile-products__tab-content content-1">
+        <ul>
+          <li>
+            <a href="#">
+              <video autoplay="" muted="" playsinline="" loop="">
+                <source src="video/아비브 세럼 비디오.mp4" type="video/mp4">
+              </video>
+            </a>
+            <!--                    <a href="#" class="block">[아임에코 Premium] 고마운샘</a>
+                    <sapn>18,000</sapn> -->
+          </li>
+
+        </ul>
+      </div>
+      <div class="products__tab-content mobile-products__tab-content content-2">
+        <ul>
+          <li>
+            <a href="#">
+              <video autoplay="" muted="" playsinline="" loop="">
+                <source src="video/아비브 패드 비디오.mp4">
+              </video>
+            </a>
+          </li>
+
+        </ul>
+      </div>
+      <div class="products__tab-content mobile-products__tab-content content-3">
+        <ul>
+          <li>
+            <a href="#">
+              <video autoplay="" muted="" playsinline="" loop="">
+                <source src="video/아비브 크림 비디오.mp4" type="video/mp4">
+              </video>
+            </a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- 베스트 상품 구현 끝 -->
+<!-- 베스트 상품 구현 끝 -->
+
+<!-- 신제품 배너 구현 시작 -->
+<section class="banner-box-type">
+  <div class="banner-box-type__top">
+    <div>
+      <h1 class="uppercase">NEW Arrivals</h1>
+      <p>
+        민감 피부만 생각해온 진심을 담은
+
+        <br> 아비브의 신제품이에요.
+      </p>
+    </div>
+    <div class="banner-box-type__background"></div>
+  </div>
+  <div class="banner-box-type__bottom">
+
+    <div class="gap"></div>
+    <div class="bg-box"></div>
+    <div class="gap"></div>
+
+  </div>
+</section>
+<!-- 신제품 배너 구현 끝 -->
+<!-- 신제품 스크롤 구현 시작 -->
+<!-- pc-ver -->
+<section class="pc-about horizontal-scroll__section">
+  <div class="horizontal-scroll__wrapper">
+    <ul class="horizontal-scroll__content">
+      <li class="pc-about__item">
+        <a href="#">
+          <img src="images/어성초핏 시트 마스크.jpg" alt="어성초핏 시트 마스크">
+        </a>
+        <div class="content">
+          <div>
+            <a href="#">
+              <h3>Mild acidic pH sheet mask <br> Jericho rose fit</h3>
+            </a>
+            <div class="flex gap-4 product_price">
+              <p class="product_price__text">₩4,000</p>
+              <p class="product_price__sale">₩2,000</p>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="pc-about__item">
+        <a href="#">
+          <img src="images/아쿠아핏 시트 마스크.jpg" alt="아쿠아핏 시트 마스크">
+        </a>
+        <div class="content">
+          <div>
+            <a href="#">
+              <h3>Mild acidic pH sheet <br> mask Aqua fit</h3>
+            </a>
+            <div class="flex gap-4 product_price">
+              <p class="product_price__text">₩4,000</p>
+              <p class="product_price__sale">₩2,000</p>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="pc-about__item">
+        <a href="#">
+          <img src="images/수분초 히알루론 크림.jpg" alt="수분초 히알루론 크림">
+        </a>
+        <div class="content">
+          <div>
+            <a href="#">
+              <h3>Sedum hyaluron crème <br> Hydrating pot</h3>
+            </a>
+            <div class="flex gap-4 product_price">
+              <p class="product_price__text">₩4,000</p>
+              <p class="product_price__sale">₩2,000</p>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="pc-about__item">
+        <a href="#">
+          <img src="images/콜라겐 아이패치.jpg" alt="콜라겐 아이패치">
+        </a>
+        <div class="content">
+          <div>
+            <a href="#">
+              <h3>Collagen eye patch <br> Jericho rose jelly</h3>
+            </a>
+            <div class="flex gap-4 product_price">
+              <p class="product_price__text">₩4,000</p>
+              <p class="product_price__sale">₩2,000</p>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="pc-about__item">
+        <a href="#">
+          <img src="images/하이포더마 SP1 2GF 세럼.jpg" alt="하이포더마 SP1 2GF 세럼">
+        </a>
+        <div class="content">
+          <div>
+            <a href="#">
+              <h3>Hypoderma SP1 2GF serum <br> Cell repair</h3>
+            </a>
+            <div class="flex gap-4 product_price">
+              <p class="product_price__text">₩4,000</p>
+              <p class="product_price__sale">₩2,000</p>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="pc-about__item">
+        <a href="#">
+          <img src="images/부활초 비피다 세럼.jpg" alt="부활초 비피다 세럼">
+        </a>
+        <div class="content">
+          <div>
+            <a href="#">
+              <h3>Jericho rose bifida serum <br> Firming drop</h3>
+            </a>
+            <div class="flex gap-4 product_price">
+              <p class="product_price__text">₩4,000</p>
+              <p class="product_price__sale">₩2,000</p>
+            </div>
+          </div>
+        </div>
+      </li>
+      <div class="pc-about__item button button__pc">
+        <div class="button__content content">
+          <a href="#" class="button__wrap">
+            <h3 class="button__pc-view">View more</h3>
+          </a>
+        </div>
+      </div>
+    </ul>
+  </div>
+</section>
+<div class="pc-extra-section"></div>
+<!-- mobile-ver -->
+<div class="mobile-extra-section"></div>
+<section class="mobile-about">
+  <ul class="mobile-about__wrp swiper-wrapper">
+    <li class="mobile-about__item swiper-slide">
+      <div class="mobile-about__img">
+        <a href="#">
+          <img src="images/어성초핏 시트 마스크.jpg" alt="어성초핏 시트 마스크">
+        </a>
+      </div>
+      <div class="mobile-about__content">
+        <div class="mobile-about__title">
+          <h3>Mild acidic pH sheet mask <br> Jericho rose fit</h3>
+        </div>
+        <div class="mobile-about__text product_price">
+          <p class="product_price__text">₩4,000</p>
+          <p class="product_price__sale">₩2,000</p>
+        </div>
+        <div class="mobile-about__button button">
+          <div class="button__content content">
+            <a href="#" class="button__wrap">
+              <h3>View more</h3>
+            </a>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="mobile-about__item swiper-slide">
+      <div class="mobile-about__img">
+        <a href="#">
+          <img src="images/아쿠아핏 시트 마스크.jpg" alt="아쿠아핏 시트 마스크">
+        </a>
+      </div>
+      <div class="mobile-about__content">
+        <div class="mobile-about__title">
+          <h3>Mild acidic pH sheet <br> mask Aqua fit</h3>
+        </div>
+        <div class="mobile-about__text product_price">
+          <p class="product_price__text">₩4,000</p>
+          <p class="product_price__sale">₩2,000</p>
+        </div>
+        <div class="mobile-about__button button">
+          <div class="button__content content">
+            <a href="#" class="button__wrap">
+              <h3>View more</h3>
+            </a>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="mobile-about__item swiper-slide">
+      <div class="mobile-about__img">
+        <a href="#">
+          <img src="images/수분초 히알루론 크림.jpg" alt="수분초 히알루론 크림">
+        </a>
+      </div>
+      <div class="mobile-about__content">
+        <div class="mobile-about__title">
+          <h3>Sedum hyaluron crème <br> Hydrating pot</h3>
+        </div>
+        <div class="mobile-about__text product_price">
+          <p class="product_price__text">₩4,000</p>
+          <p class="product_price__sale">₩2,000</p>
+        </div>
+        <div class="mobile-about__button button">
+          <div class="button__content content">
+            <a href="#" class="button__wrap">
+              <h3>View more</h3>
+            </a>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="mobile-about__item swiper-slide">
+      <div class="mobile-about__img">
+        <a href="#">
+          <img src="images/콜라겐 아이패치.jpg" alt="콜라겐 아이패치">
+        </a>
+      </div>
+      <div class="mobile-about__content">
+        <div class="mobile-about__title">
+          <h3>Collagen eye patch <br> Jericho rose jelly</h3>
+        </div>
+        <div class="mobile-about__text product_price">
+          <p class="product_price__text">₩4,000</p>
+          <p class="product_price__sale">₩2,000</p>
+        </div>
+        <div class="mobile-about__button button">
+          <div class="button__content content">
+            <a href="#" class="button__wrap">
+              <h3>View more</h3>
+            </a>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="mobile-about__item swiper-slide">
+      <div class="mobile-about__img">
+        <a href="#">
+          <img src="images/하이포더마 SP1 2GF 세럼.jpg" alt="하이포더마 SP1 2GF 세럼">
+        </a>
+      </div>
+      <div class="mobile-about__content">
+        <div class="mobile-about__title">
+          <h3>Hypoderma SP1 2GF serum <br> Cell repair</h3>
+        </div>
+        <div class="mobile-about__text product_price">
+          <p class="product_price__text">₩4,000</p>
+          <p class="product_price__sale">₩2,000</p>
+        </div>
+        <div class="mobile-about__button button">
+          <div class="button__content content">
+            <a href="#" class="button__wrap">
+              <h3>View more</h3>
+            </a>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="mobile-about__item swiper-slide">
+      <div class="mobile-about__img">
+        <a href="#">
+          <img src="images/부활초 비피다 세럼.jpg" alt="부활초 비피다 세럼">
+        </a>
+      </div>
+      <div class="mobile-about__content">
+        <div class="mobile-about__title">
+          <h3>Jericho rose bifida serum <br> Firming drop</h3>
+        </div>
+        <div class="mobile-about__text product_price">
+          <p class="product_price__text">₩4,000</p>
+          <p class="product_price__sale">₩2,000</p>
+        </div>
+        <div class="mobile-about__button button">
+          <div class="button__content content">
+            <a href="#" class="button__wrap">
+              <h3>View more</h3>
+            </a>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+  <div class="mobile-about__pagination"></div>
+</section>
+<!-- 신제품 스크롤 구현 끝 -->
+<!-- 푸터 구현 시작 -->
+<footer class="footer pc-footer">
+  <div class="footer__innerWrapper innerWrapper">
+    <div class="innerWrapper__top">
+      <div class="text-wrapper">
+        <div class="footer__tit">
+          <span>About Us</span>
+          <div class="footer__txt">
+            <p>The digital platform for ABIB CO.<br> Manual for Freedom, Research and Creativity</p>
+          </div>
+        </div>
+      </div>
+      <nav class="text-wrapper">
+        <div class="footer__tit">
+          <span>main menu</span>
+          <ul class="footer__txt">
+            <li><a href="#">Category</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Brand story</a></li>
+            <li><a href="#">Event</a></li>
+            <li><a href="#">Review</a></li>
+          </ul>
+        </div>
+
+      </nav>
+      <nav class="text-wrapper">
+        <div class="footer__tit">
+          <span>service</span>
+          <ul class="footer__txt">
+            <li><a href="#">Order inquiry</a></li>
+            <li><a href="#">Q&A</a></li>
+            <li><a href="#">Service center</a></li>
+            <li><a href="#">Store</a></li>
+            <li><a href="#">Terms of Use</a></li>
+          </ul>
+        </div>
+
+      </nav>
+    </div>
+    <div class="innerWrapper__bottom">
+      <div class="text-wrapper">
+        <span class="footer__tit">social </span>
+        <span class="footer__txt footer__icon">
+          <a href="#" target="_blank" aria-label="Facebook (Opens in a new tab)" class="common-footer__facebook"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" loading="lazy" class="-social ui-fragments-svg">
+              <path d="M12.0004 2.3999C6.69789 2.3999 2.40039 6.6974 2.40039 11.9999C2.40039 16.7924 5.91039 20.7637 10.5004 21.4837V14.7749H8.06289V11.9999H10.5004V9.8849C10.5004 7.47928 11.9329 6.1499 14.1266 6.1499C15.1766 6.1499 16.2754 6.3374 16.2754 6.3374V8.6999H15.0641C13.8716 8.6999 13.5004 9.44053 13.5004 10.1999V11.9999H16.1629L15.7373 14.7749H13.5004V21.4837C18.0904 20.7637 21.6004 16.7924 21.6004 11.9999C21.6004 6.6974 17.3029 2.3999 12.0004 2.3999Z" fill="#f9f8ee"></path>
+            </svg></a>
+          <a href="#" target="_blank" aria-label="LinkedIn (Opens in a new tab)" class="common-footer__linkedin"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" loading="lazy" class="-social ui-fragments-svg">
+              <path d="M20.52 2H3.477C2.66 2 2 2.645 2 3.441v17.114C2 21.352 2.66 22 3.477 22H20.52c.816 0 1.48-.648 1.48-1.441V3.44C22 2.645 21.336 2 20.52 2ZM7.934 19.043h-2.97V9.496h2.97v9.547ZM6.449 8.195a1.72 1.72 0 1 1-.006-3.439 1.72 1.72 0 0 1 .006 3.44Zm12.594 10.848h-2.965v-4.64c0-1.106-.02-2.532-1.543-2.532-1.543 0-1.777 1.207-1.777 2.453v4.719H9.797V9.496h2.844v1.305h.039c.394-.75 1.363-1.543 2.804-1.543 3.004 0 3.559 1.976 3.559 4.547v5.238Z" fill="#f9f8ee"></path>
+            </svg></a>
+          <a href="#" target="_blank" aria-label="Youtube (Opens in a new tab)" class="common-footer__youtube"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" loading="lazy" class="-social ui-fragments-svg">
+              <path d="M29.068 10.713s-.26-1.838-1.063-2.645C26.99 7.005 25.855 7 25.333 6.938c-3.729-.271-9.328-.271-9.328-.271h-.01s-5.6 0-9.328.27c-.521.063-1.656.068-2.672 1.13-.802.808-1.057 2.646-1.057 2.646s-.271 2.162-.271 4.318v2.021c0 2.156.265 4.318.265 4.318s.26 1.838 1.058 2.646c1.015 1.062 2.349 1.026 2.942 1.14 2.136.203 9.068.266 9.068.266s5.604-.01 9.333-.276c.521-.063 1.657-.068 2.672-1.13.802-.808 1.063-2.646 1.063-2.646s.265-2.157.265-4.318v-2.02c0-2.157-.265-4.319-.265-4.319Zm-15.823 8.792V12.01l7.203 3.76-7.203 3.735Z" fill="#f9f8ee"></path>
+            </svg></a>
+        </span>
+      </div>
+      <div class="grow-wrapper"></div>
+    </div>
+  </div>
+</footer>
+<footer class="footer mobile-footer">
+  <div class="footer__innerWrapper innerWrapper">
+    <div class="innerWrapper__top">
+      <div class="text-wrapper">
+        <div class="footer__tit">
+          <span>About Us</span>
+          <div class="footer__txt">
+            <p>The digital platform for ABIB CO.<br> Manual for Freedom, Research and Creativity</p>
+          </div>
+        </div>
+      </div>
+      <nav class="text-wrapper">
+        <div class="footer__tit">
+          <span>main menu</span>
+          <ul class="footer__txt">
+            <li><a href="#">Category</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Brand story</a></li>
+            <li><a href="#">Event</a></li>
+            <li><a href="#">Review</a></li>
+          </ul>
+        </div>
+
+      </nav>
+    </div>
+    <div class="innerWrapper__bottom">
+      <div class="text-wrapper">
+        <span class="footer__tit">social </span>
+        <span class="footer__txt footer__icon">
+          <a href="#" target="_blank" aria-label="Facebook (Opens in a new tab)" class="common-footer__facebook"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" loading="lazy" class="-social ui-fragments-svg">
+              <path d="M12.0004 2.3999C6.69789 2.3999 2.40039 6.6974 2.40039 11.9999C2.40039 16.7924 5.91039 20.7637 10.5004 21.4837V14.7749H8.06289V11.9999H10.5004V9.8849C10.5004 7.47928 11.9329 6.1499 14.1266 6.1499C15.1766 6.1499 16.2754 6.3374 16.2754 6.3374V8.6999H15.0641C13.8716 8.6999 13.5004 9.44053 13.5004 10.1999V11.9999H16.1629L15.7373 14.7749H13.5004V21.4837C18.0904 20.7637 21.6004 16.7924 21.6004 11.9999C21.6004 6.6974 17.3029 2.3999 12.0004 2.3999Z" fill="#f9f8ee"></path>
+            </svg></a>
+          <a href="#" target="_blank" aria-label="LinkedIn (Opens in a new tab)" class="common-footer__linkedin"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" loading="lazy" class="-social ui-fragments-svg">
+              <path d="M20.52 2H3.477C2.66 2 2 2.645 2 3.441v17.114C2 21.352 2.66 22 3.477 22H20.52c.816 0 1.48-.648 1.48-1.441V3.44C22 2.645 21.336 2 20.52 2ZM7.934 19.043h-2.97V9.496h2.97v9.547ZM6.449 8.195a1.72 1.72 0 1 1-.006-3.439 1.72 1.72 0 0 1 .006 3.44Zm12.594 10.848h-2.965v-4.64c0-1.106-.02-2.532-1.543-2.532-1.543 0-1.777 1.207-1.777 2.453v4.719H9.797V9.496h2.844v1.305h.039c.394-.75 1.363-1.543 2.804-1.543 3.004 0 3.559 1.976 3.559 4.547v5.238Z" fill="#f9f8ee"></path>
+            </svg></a>
+          <a href="#" target="_blank" aria-label="Youtube (Opens in a new tab)" class="common-footer__youtube"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" loading="lazy" class="-social ui-fragments-svg">
+              <path d="M29.068 10.713s-.26-1.838-1.063-2.645C26.99 7.005 25.855 7 25.333 6.938c-3.729-.271-9.328-.271-9.328-.271h-.01s-5.6 0-9.328.27c-.521.063-1.656.068-2.672 1.13-.802.808-1.057 2.646-1.057 2.646s-.271 2.162-.271 4.318v2.021c0 2.156.265 4.318.265 4.318s.26 1.838 1.058 2.646c1.015 1.062 2.349 1.026 2.942 1.14 2.136.203 9.068.266 9.068.266s5.604-.01 9.333-.276c.521-.063 1.657-.068 2.672-1.13.802-.808 1.063-2.646 1.063-2.646s.265-2.157.265-4.318v-2.02c0-2.157-.265-4.319-.265-4.319Zm-15.823 8.792V12.01l7.203 3.76-7.203 3.735Z" fill="#f9f8ee"></path>
+            </svg></a>
+        </span>
+      </div>
+      <nav class="text-wrapper">
+        <div class="footer__tit">
+          <span>service</span>
+          <ul class="footer__txt">
+            <li><a href="#">Order inquiry</a></li>
+            <li><a href="#">Q&A</a></li>
+            <li><a href="#">Service center</a></li>
+            <li><a href="#">Store</a></li>
+            <li><a href="#">Terms of Use</a></li>
+          </ul>
+        </div>
+
+      </nav>
+    </div>
+  </div>
+</footer>
+<!-- 푸터 구현 끝 -->
+</body>
+</html>
