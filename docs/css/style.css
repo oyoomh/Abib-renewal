@@ -567,7 +567,9 @@ html {
   width: 100%;
   height: 100%;
   object-fit: fill;
- 
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+      -webkit-backface-visibility: hidden;
+      -moz-backface-visibility: hidden;
 }
 
 .pc-products__sub-wrap {
