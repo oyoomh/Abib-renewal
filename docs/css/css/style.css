@@ -567,6 +567,9 @@ html {
   width: 100%;
   height: 100%;
   object-fit: fill;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
 }
 
 .pc-products__sub-wrap {
@@ -702,7 +705,6 @@ html {
 @media (max-width: 786px) {
   .banner-box-type__bottom .bg-box {
     background-image: url(https://abib.com/images/detail/230830_FD/FD_MO_2.jpg);
-    background-size: contain;
   }
 }
 
