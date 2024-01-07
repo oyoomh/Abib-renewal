@@ -151,8 +151,12 @@ html {
   z-index: 100;
 }
 
+.mobile-top-bar > .header-container > .header-container__logo img {
+  margin: 0 0 0 15px;
+}
+
 .mobile-top-bar .header-container__widget-box ul > li > a {
-  padding: 0 10px 0 0;
+  padding: 0 15px 0 0;
 }
 
 .mobile-top-bar .header-container__widget-box ul > li:last-child > a > span {
@@ -175,10 +179,10 @@ html {
 .mobile-top-bar .header-container__widget-box ul > li:last-child > a > span::before {
   content: "";
   position: absolute;
-  height: 0.5px;
+  height: 1px;
   top: 40%;
   width: 70%;
-  background-color: black;
+  background-color: var(--color-grey);
 }
 
 .mobile-top-bar .header-container__widget-box ul > li:last-child > a > span::before {
@@ -285,7 +289,7 @@ html {
 .mobile-side-bar__btn-close > div {
   top: 50%;
   left: 25%;
-  height: 0.5px;
+  height: 1px;
   width: 50%;
   color: var(--color-grey);
   transform: rotate(-45deg);
@@ -301,9 +305,11 @@ html {
 }
 
 .mobile-side-bar__body {
-  overflow-y: scroll;
+  height: 100vh;
+  overflow-y: auto;
   -ms-overflow-style: none; /* 인터넷 익스플로러 */
   scrollbar-width: none; /* 파이어폭스 */
+  padding-bottom: 50px;
 }
 
 .mobile-side-bar__body::-webkit-scrollbar {

@@ -145,8 +145,11 @@ html {
   background-color: var(--color-bg);
   z-index: 100;
 }
+.mobile-top-bar > .header-container > .header-container__logo img {
+  margin: 0 0 0 15px;
+}
 .mobile-top-bar .header-container__widget-box ul > li > a {
-  padding: 0 10px 0 0;
+  padding: 0 15px 0 0;
 }
 
 .mobile-top-bar .header-container__widget-box ul > li:last-child > a > span {
@@ -182,10 +185,10 @@ html {
   > span::before {
   content: "";
   position: absolute;
-  height: 0.5px;
+  height: 1px;
   top: 40%;
   width: 70%;
-  background-color: black;
+  background-color: var(--color-grey);
 }
 .mobile-top-bar
   .header-container__widget-box
@@ -284,7 +287,7 @@ html {
 .mobile-side-bar__btn-close > div {
   top: 50%;
   left: 25%;
-  height: 0.5px;
+  height: 1px;
   width: 50%;
   color: var(--color-grey);
   transform: rotate(-45deg);
@@ -298,10 +301,12 @@ html {
 }
 
 .mobile-side-bar__body {
-  overflow-y: scroll;
+  height: 100vh;
+  overflow-y: auto;
   // 스크롤바 없애고 기능은 하도록 구현
   -ms-overflow-style: none; /* 인터넷 익스플로러 */
   scrollbar-width: none; /* 파이어폭스 */
+  padding-bottom: 50px;
 }
 .mobile-side-bar__body::-webkit-scrollbar {
   display: none; /* 크롬, 사파리, 오페라, 엣지 */
